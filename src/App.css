@@ -1,38 +1,79 @@
+/* General Body and Page Setup */
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: #fff9f8;
+  scroll-behavior: smooth;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header Section (Centered Name) */
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Center on the screen */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Content Section */
+.content {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff9f8;
+  border-top: 1px solid #fff9f8;
 }
 
-.App-link {
-  color: #61dafb;
+/* Individual Sections */
+.section {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p,
+ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Scrollable Sections */
+#about,
+#projects {
+  background-color: #fff9f8;
+}
+
+#about {
+  background-color: #fff9f8;
+}
+
+#projects {
+  background-color: #fff9f8;
+}
+
+/* Make sure there's enough space to scroll */
+html {
+  scroll-padding-top: 80px; /* For smoother scroll when clicking to section */
 }
