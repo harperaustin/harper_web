@@ -38,6 +38,10 @@
   transition: all 0.2s ease;
 }
 
+#workscroll,
+#projectsscroll {
+  padding-top: 30px;
+}
 .buttons button:hover {
   background-color: #ffffff;
   transform: translateY(-2px);

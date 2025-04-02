@@ -79,11 +79,11 @@ function App() {
       <div className="buttons">
         <ScrambleTextButton
           text="Work"
-          onClick={() => scrollToSection("work")}
+          onClick={() => scrollToSection("workscroll")}
         />
         <ScrambleTextButton
           text="Projects"
-          onClick={() => scrollToSection("projects")}
+          onClick={() => scrollToSection("projectsscroll")}
         />
         <ScrambleTextButton
           text="Contact"
@@ -122,6 +122,7 @@ function App() {
             real-world needs.
           </h2>
         </section>
+        <section id="workscroll"></section>
         <section id="work" className="section">
           <h3>Work Experience</h3>
           <p>
@@ -168,6 +169,7 @@ function App() {
             science of AI, driven by an interest for impactful CS applications.
           </h2>
         </section>
+        <section id="projectsscroll"></section>
         <section id="projects" className="section">
           <h3>Projects</h3>
           <p>
