@@ -11,6 +11,46 @@
   margin-top: 100px; /* Optional: adjust for vertical space from the top */
 }
 
+.buttons {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+
+.buttons button {
+  /* Basic styling */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+}
+
+/* Hover state 
+.buttons button:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  font-size: 24px;
+}
+
+/* Active/clicked state 
+.buttons button:active {
+  background-color: #ffffff;
+  transform: translateY(0);
+}
+*/
 .about {
   margin-top: 150px;
 }

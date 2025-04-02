@@ -23,6 +23,12 @@ function App() {
   const [imagePositions, setImagePositions] = useState<any[]>([]); // Store image positions
   const lastMousePosition = useRef({ x: 0, y: 0 });
   const imageIndex = useRef(0);
+
+  // Refs for the buttons
+  const workButtonRef = useRef<HTMLButtonElement>(null);
+  const projectsButtonRef = useRef<HTMLButtonElement>(null);
+  const contactButtonRef = useRef<HTMLButtonElement>(null);
+
   // Function to handle mouse movements and cycle images
   const handleMouseMove = (e: MouseEvent) => {
     const { x, y } = e;
@@ -72,13 +78,95 @@ function App() {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Set up text scramble effect
+  useEffect(() => {
+    const setupScrambleEffect = (buttonElement: HTMLButtonElement | null) => {
+      if (!buttonElement) {
+        console.log("Not button element");
+        return;
+      }
+
+      // Store original text
+      const originalText = buttonElement.textContent || "";
+      buttonElement.setAttribute("data-text", originalText);
+      const originalChars = originalText.split("");
+
+      // Track interval ID for cleanup
+      let intervalId: number | null = null;
+
+      // Add hover effect
+      buttonElement.addEventListener("mouseover", () => {
+        console.log("mouseover");
+        let iterations = 0;
+        let scrambling = true;
+
+        // Clear existing interval if any
+        if (intervalId) {
+          window.clearInterval(intervalId);
+        }
+
+        // Start scrambling
+        intervalId = window.setInterval(() => {
+          buttonElement.textContent = originalText
+            .split("")
+            .map((letter, index) => {
+              // Keep some characters unchanged for readability
+              if (index < iterations || !scrambling) {
+                return originalText[index];
+              }
+
+              // Scramble using original text characters
+              return originalChars[
+                Math.floor(Math.random() * originalChars.length)
+              ];
+            })
+            .join("");
+
+          // Gradually reduce scrambling
+          if (iterations >= originalText.length || iterations > 15) {
+            scrambling = false;
+          }
+
+          iterations += 1 / 3;
+
+          // End after ~2 seconds
+          if (iterations > 12) {
+            if (intervalId) window.clearInterval(intervalId);
+            buttonElement.textContent = originalText;
+          }
+        }, 50);
+      });
+
+      // Reset on mouseout
+      buttonElement.addEventListener("mouseout", () => {
+        if (intervalId) {
+          window.clearInterval(intervalId);
+          buttonElement.textContent = originalText;
+        }
+      });
+    };
+
+    // Set up mouse move event listener
+    document.addEventListener("mousemove", handleMouseMove);
+
+    // Set up text scramble for each button
+    setupScrambleEffect(workButtonRef.current);
+    setupScrambleEffect(projectsButtonRef.current);
+    setupScrambleEffect(contactButtonRef.current);
+
+    // Clean up on component unmount
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="scrollButtons">
+      <div className="buttons">
         <button onClick={() => scrollToSection("work")}>Work</button>
         <button onClick={() => scrollToSection("projects")}>Projects</button>
         <button onClick={() => scrollToSection("contact")}>Contact</button>
-      </header>
+      </div>
       <header className="App-header">
         <h1>Harper</h1>
         <h1>Austin</h1>
