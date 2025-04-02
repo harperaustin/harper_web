@@ -4,17 +4,12 @@ import ScrambleTextButton from "./ScrambleTextButton";
 
 const images = [
   "images/prem_ball.png",
-  "images/ball_cutout.png",
-  "images/cats_cutout.png",
-  "images/Computer_cutout.png",
-  "images/head_cutout.png",
-  "images/texas_cutout.png",
-  "images/head2_cutout.png",
-  "images/tommy_cutout.png",
-  "images/guitar_png.png",
-  "images/george_cutout.png",
-  "images/brown_cutout.png",
-  "images/body_cutout.png",
+  "images/blueberries.png",
+  "images/cactus.png",
+  "images/computer.png",
+  "images/cowboy_hat.png",
+  "images/guitar.png",
+  "images/pine_cone.png",
 ];
 
 // TODO: Consider doing uniform images, like all my face, but different emotions or color?
