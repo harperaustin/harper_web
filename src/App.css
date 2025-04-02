@@ -1,79 +1,65 @@
-/* General Body and Page Setup */
-body {
-  margin: 0;
-  font-family: monospace;
-  background-color: #fff9f8;
-  scroll-behavior: smooth;
-}
-
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-/* Header Section (Centered Name) */
 .App-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80vh; /* Center on the screen */
-  text-align: center;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: flex-start; /* Align them to the left */
+  margin-left: 20px; /* Adjust this to control the overall left offset */
+  margin-top: 100px; /* Optional: adjust for vertical space from the top */
 }
 
-.App-header h1 {
-  font-size: 3rem;
-  margin: 0;
+.about {
+  margin-top: 150px;
+}
+h1 {
+  font-size: 200px;
+  margin: 0; /* Remove default margins */
 }
 
-.App-header h3 {
-  font-size: 1.5rem;
-  margin-top: 10px;
+h1:first-child {
+  margin-left: 10px; /* Harper more to the left */
+  margin-bottom: -20px; /* Decrease space between Harper and Austin */
 }
 
-/* Content Section */
+h1:nth-child(2) {
+  margin-left: 150px; /* Austin slightly to the right of Harper */
+  margin-top: -20px; /* Optional: adjust to bring Austin closer to Harper */
+}
+
 .content {
-  width: 100%;
   padding: 20px;
-  background-color: #fff9f8;
-  border-top: 1px solid #fff9f8;
 }
 
-/* Individual Sections */
 .section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-h3 {
-  font-size: 2rem;
   margin-bottom: 20px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-p,
-ul {
-  font-size: 1.1rem;
-  line-height: 1.6;
+p {
+  margin: 0.5rem 0;
+  font-size: 20px;
+}
+h3 {
+  font-size: 25px;
 }
 
-/* Scrollable Sections */
-#about,
-#projects {
-  background-color: #fff9f8;
+a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-#about {
-  background-color: #fff9f8;
+a:hover {
+  text-decoration: underline;
 }
 
-#projects {
-  background-color: #fff9f8;
-}
-
-/* Make sure there's enough space to scroll */
-html {
-  scroll-padding-top: 80px; /* For smoother scroll when clicking to section */
+#workblurb,
+#projectblurb {
+  margin-right: 0; /* Ensure right-alignment */
+  max-width: 60%; /* Limit the width */
+  font-size: 35px;
 }
