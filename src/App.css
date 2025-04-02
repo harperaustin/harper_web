@@ -29,7 +29,7 @@
   border: none;
   border-radius: 0;
   background-color: #ffffff;
-  color: #333;
+  color: #000000;
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -57,7 +57,7 @@ Active/clicked state .buttons button:active {
   margin-top: 150px;
 }
 h1 {
-  font-size: 200px;
+  font-size: 180px;
   margin: 0; /* Remove default margins */
 }
 
@@ -67,7 +67,7 @@ h1:first-child {
 }
 
 h1:nth-child(2) {
-  margin-left: 150px; /* Austin slightly to the right of Harper */
+  margin-left: 250px; /* Austin slightly to the right of Harper */
   margin-top: -20px; /* Optional: adjust to bring Austin closer to Harper */
 }
 
@@ -91,8 +91,12 @@ h3 {
 }
 
 a {
-  color: #007bff;
+  color: #4aa0fb;
   text-decoration: none;
+  font-size: 20px;
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
 a:hover {

@@ -78,21 +78,21 @@ function App() {
     <div className="App">
       <div className="buttons">
         <ScrambleTextButton
-          text="Work"
+          text="WORK"
           onClick={() => scrollToSection("workscroll")}
         />
         <ScrambleTextButton
-          text="Projects"
+          text="PROJECTS"
           onClick={() => scrollToSection("projectsscroll")}
         />
         <ScrambleTextButton
-          text="Contact"
+          text="CONTACT"
           onClick={() => scrollToSection("contact")}
         />
       </div>
       <header className="App-header">
-        <h1>Harper</h1>
-        <h1>Austin</h1>
+        <h1>HARPER</h1>
+        <h1>AUSTIN</h1>
       </header>
       {/* Render images at the mouse position */}
       {imagePositions.map((position, index) => (
@@ -112,7 +112,7 @@ function App() {
       ))}
       <div className="content">
         <section id="about" className="about">
-          <h2>student, developer, engineer, problem-solver</h2>
+          <h2>student, developer, engineer, problem-solver, designer</h2>
         </section>
         <section id="workblurb" className="section">
           <h2>
@@ -282,6 +282,9 @@ function App() {
               Website
             </a>
           </p>
+        </section>
+        <section id="tools/skills" className="section">
+          <h3>Tools/Skills</h3>
         </section>
         <section id="contact" className="section">
           <h3>Contact</h3>
