@@ -3,7 +3,7 @@ import "./App.css";
 import ScrambleTextButton from "./ScrambleTextButton";
 
 const images = [
-  "images/baby_cutout.png",
+  "images/prem_ball.png",
   "images/ball_cutout.png",
   "images/cats_cutout.png",
   "images/Computer_cutout.png",
