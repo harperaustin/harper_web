@@ -17,6 +17,7 @@ const images = [
 ];
 
 // TODO: Consider doing uniform images, like all my face, but different emotions or color?
+// TODO: The cursor drag functionality doesn't work if I scroll down at all, need to fix that.
 
 function App() {
   const [imagePositions, setImagePositions] = useState<any[]>([]); // Store image positions
@@ -66,8 +67,18 @@ function App() {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="App">
+      <header className="scrollButtons">
+        <button onClick={() => scrollToSection("work")}>Work</button>
+        <button onClick={() => scrollToSection("projects")}>Projects</button>
+        <button onClick={() => scrollToSection("contact")}>Contact</button>
+      </header>
       <header className="App-header">
         <h1>Harper</h1>
         <h1>Austin</h1>
@@ -246,9 +257,39 @@ function App() {
               GitHub
             </a>
           </p>
+          <p>
+            <strong>Terminal-Style Personal Website: </strong> Using javasript,
+            HTML, and CSS, I developed a personal website with an interactive
+            terminal that allows users to use commands to view different
+            information about me experience.{" "}
+            <a
+              href="https://harperaustin.github.io/Personal-Website-Repo/"
+              target="_blank"
+            >
+              Website
+            </a>
+          </p>
         </section>
         <section id="contact" className="section">
           <h3>Contact</h3>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/harper-austin-523743276"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          </p>
+          <p>
+            <a href="https://github.com/harperaustin" target="_blank">
+              GitHub
+            </a>
+          </p>
+          <p>
+            <a href="mailto:jharpaustin@gmail.com" target="_blank">
+              Email Me
+            </a>
+          </p>
         </section>
       </div>{" "}
     </div>
