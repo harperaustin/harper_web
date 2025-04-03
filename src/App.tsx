@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import ScrambleTextButton from "./ScrambleTextButton";
+import ImageCycler from "./ImageCycler";
 
 const images = [
   "images/prem_ball.png",
@@ -12,6 +13,7 @@ const images = [
   "images/pine_cone.png",
 ];
 
+// TODO: Add more images
 // TODO: Consider doing uniform images, like all my face, but different emotions or color?
 // TODO: The cursor drag functionality doesn't work if I scroll down at all, need to fix that.
 
@@ -116,6 +118,7 @@ function App() {
             science, from crafting innovative software to connecting tech with
             real-world needs.
           </h2>
+          <ImageCycler />
         </section>
         <section id="workscroll"></section>
         <section id="work" className="section">
