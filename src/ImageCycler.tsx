@@ -1,19 +1,54 @@
 import React, { useState, useEffect } from "react";
 
+// const images = [
+//   "images/pixface1.png",
+//   "images/pixface2.png",
+//   "images/pixface3.png",
+//   "images/pixface4.png",
+//   "images/pixface5.png",
+//   "images/pixface6.png",
+//   "images/pixface5.png",
+//   "images/pixface4.png",
+//   "images/pixface3.png",
+//   "images/pixface2.png",
+//   "images/pixface1.png",
+
+//   "images/pixface12.png",
+//   "images/pixface11.png",
+//   "images/pixface10.png",
+//   "images/pixface9.png",
+//   "images/pixface8.png",
+//   "images/pixface7.png",
+//   "images/pixface8.png",
+//   "images/pixface9.png",
+//   "images/pixface10.png",
+//   "images/pixface11.png",
+//   "images/pixface12.png",
+// ];
+
 const images = [
-  "images/pface1.png",
-  "images/pface2.png",
-  "images/pface3.png",
-  "images/pface4.png",
-  "images/pface5.png",
-  "images/pface6.png",
-  "images/pface7.png",
-  "images/pface8.png",
-  "images/pface9.png",
-  "images/pface10.png",
-  "images/pface11.png",
-  "images/pface12.png",
-  "images/pface13.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_3.png",
+  "images/hs_4.png",
+  "images/hs_5.png",
+  "images/hs_6.png",
+  "images/hs_7.png",
+  "images/hs_6.png",
+  "images/hs_7.png",
+  "images/hs_6.png",
+  "images/hs_5.png",
+  "images/hs_4.png",
+  "images/hs_3.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
+  "images/hs_2.png",
 ];
 
 const ImageCycler: React.FC = () => {
@@ -22,7 +57,7 @@ const ImageCycler: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 100); // Change every second
+    }, 125);
 
     return () => clearInterval(interval);
   }, []);
@@ -33,8 +68,8 @@ const ImageCycler: React.FC = () => {
         src={images[currentIndex]}
         alt={`Cycling image ${currentIndex}`}
         style={{
-          width: "200px",
-          height: "200px",
+          width: "300px",
+          height: "300px",
           objectFit: "cover",
           borderRadius: "10px",
         }}

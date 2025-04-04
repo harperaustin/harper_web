@@ -112,13 +112,13 @@ function App() {
           <h2>student, developer, engineer, problem-solver, designer</h2>
         </section>
         <section id="workblurb" className="section">
+          <ImageCycler />
           <h2>
             With experience developing, teaching, and marketing code solutions,
             I've gained a well-rounded expertise in all facets of computer
             science, from crafting innovative software to connecting tech with
             real-world needs.
           </h2>
-          <ImageCycler />
         </section>
         <section id="workscroll"></section>
         <section id="work" className="section">
@@ -281,20 +281,29 @@ function App() {
             </a>
           </p>
         </section>
-        <section id="tools/skills" className="section">
-          <h3>Tools/Skills</h3>
-          <h3>Languages</h3>
-          <p>
-            Python, Java, C, C++, Javascript, Typescript, Swift, x86 Assembly,
-            HTML, CSS
-          </p>
-          <h3>Skills/Frameworks</h3>
-          <p>
-            React, Node, TensorFlow, PyTorch, NumPy, Matplotlib, JUnit, PyTest,
-            Git
-          </p>
-          <h3>Misc</h3>
-          <p>Autocad, 3D printing, woodworking, CNC, laser cutting, robotics</p>
+        <section id="toolsskills" className="section">
+          <div className="content">
+            <div>
+              <h3>Languages</h3>
+              <p>
+                Python, Java, C, C++, Javascript, Typescript, Swift, x86
+                Assembly, HTML, CSS
+              </p>
+            </div>
+            <div>
+              <h3>Skills/Frameworks</h3>
+              <p>
+                React, Node, TensorFlow, PyTorch, NumPy, Matplotlib, JUnit,
+                PyTest, Git
+              </p>
+            </div>
+            <div>
+              <h3>Misc</h3>
+              <p>
+                Autocad, 3D printing, woodworking, CNC, laser cutting, Arduino
+              </p>
+            </div>
+          </div>
         </section>
         <section id="contact" className="section">
           <h3>Contact</h3>
