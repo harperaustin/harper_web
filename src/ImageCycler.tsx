@@ -22,7 +22,7 @@ const ImageCycler: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10); // Change every second
+    }, 100); // Change every second
 
     return () => clearInterval(interval);
   }, []);

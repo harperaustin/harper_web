@@ -269,7 +269,7 @@ function App() {
             </a>
           </p>
           <p>
-            <strong>Terminal-Style Personal Website: </strong> Using javasript,
+            <strong>Terminal-Style Personal Website: </strong> Using javascript,
             HTML, and CSS, I developed a personal website with an interactive
             terminal that allows users to use commands to view different
             information about me experience.{" "}
@@ -283,6 +283,18 @@ function App() {
         </section>
         <section id="tools/skills" className="section">
           <h3>Tools/Skills</h3>
+          <h3>Languages</h3>
+          <p>
+            Python, Java, C, C++, Javascript, Typescript, Swift, x86 Assembly,
+            HTML, CSS
+          </p>
+          <h3>Skills/Frameworks</h3>
+          <p>
+            React, Node, TensorFlow, PyTorch, NumPy, Matplotlib, JUnit, PyTest,
+            Git
+          </p>
+          <h3>Misc</h3>
+          <p>Autocad, 3D printing, woodworking, CNC, laser cutting, robotics</p>
         </section>
         <section id="contact" className="section">
           <h3>Contact</h3>
