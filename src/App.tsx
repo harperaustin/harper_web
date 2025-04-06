@@ -27,6 +27,27 @@ function App() {
     const { x, y } = e;
     // TODO: IF MOUSE LOWER AT CERTAIN POINT DO NOT CHECK ANYTHING
     // Calculate the distance from the last position
+    // Get the current scroll position
+    const scrollY = window.scrollY;
+
+    // Adjust the mouse position based on the scroll
+    const adjustedY = y + scrollY;
+
+    // Get the target section element (in this case, the "about" section)
+    const targetSection = document.querySelector("#about"); // This targets the section with id="about"
+    if (!targetSection) return; // Exit if the element is not found
+
+    // Get the position of the target section
+    const targetRect = targetSection.getBoundingClientRect();
+    const sectionBottom = targetRect.bottom + scrollY; // Bottom position of the section, adjusted for scroll
+
+    // Define the threshold as the bottom position of the target section
+    const thresholdY = sectionBottom;
+
+    if (adjustedY > thresholdY) {
+      return; // Don't place an image if the mouse is past the threshold
+    }
+
     const distance = Math.sqrt(
       Math.pow(x - lastMousePosition.current.x, 2) +
         Math.pow(y - lastMousePosition.current.y, 2)
@@ -39,7 +60,7 @@ function App() {
       const newImage = {
         src: images[imageIndex.current % images.length],
         x: x - 150, // Offset to make the image appear underneath the mouse
-        y: y - 150,
+        y: adjustedY - 150,
       };
 
       // Update the images positions
@@ -83,6 +104,11 @@ function App() {
           onClick={() => scrollToSection("projectsscroll")}
         />
         <ScrambleTextButton
+          text="SKILLS"
+          onClick={() => scrollToSection("toolsscroll")}
+        />
+
+        <ScrambleTextButton
           text="CONTACT"
           onClick={() => scrollToSection("contact")}
         />
@@ -109,15 +135,15 @@ function App() {
       ))}
       <div className="content">
         <section id="about" className="about">
-          <h2>student, developer, engineer, problem-solver, designer</h2>
+          <h2>developer, engineer, problem-solver, designer</h2>
         </section>
         <section id="workblurb" className="section">
           <ImageCycler />
           <h2>
-            With experience developing, teaching, and marketing code solutions,
-            I've gained a well-rounded expertise in all facets of computer
-            science, from crafting innovative software to connecting tech with
-            real-world needs.
+            As a student at Brown University with experience developing,
+            teaching, and marketing code solutions, I've gained a well-rounded
+            expertise in all facets of computer science, from crafting
+            innovative software to connecting tech with real-world needs.
           </h2>
         </section>
         <section id="workscroll"></section>
@@ -281,29 +307,21 @@ function App() {
             </a>
           </p>
         </section>
+        <section id="toolsscroll"></section>
         <section id="toolsskills" className="section">
-          <div className="content">
-            <div>
-              <h3>Languages</h3>
-              <p>
-                Python, Java, C, C++, Javascript, Typescript, Swift, x86
-                Assembly, HTML, CSS
-              </p>
-            </div>
-            <div>
-              <h3>Skills/Frameworks</h3>
-              <p>
-                React, Node, TensorFlow, PyTorch, NumPy, Matplotlib, JUnit,
-                PyTest, Git
-              </p>
-            </div>
-            <div>
-              <h3>Misc</h3>
-              <p>
-                Autocad, 3D printing, woodworking, CNC, laser cutting, Arduino
-              </p>
-            </div>
-          </div>
+          <h3>Technical Skills and Tools</h3>
+          <p>
+            <strong>Languages: </strong> Python, Java, C, C++, Javascript,
+            Typescript, Swift, x86 Assembly, HTML, CSS
+          </p>
+          <p>
+            <strong>Skills/Frameworks: </strong> React, Node, TensorFlow,
+            PyTorch, NumPy, Matplotlib, JUnit, PyTest, Git
+          </p>
+          <p>
+            <strong>Misc: </strong> Autocad, 3D printing, woodworking, CNC,
+            laser cutting, Arduino
+          </p>
         </section>
         <section id="contact" className="section">
           <h3>Contact</h3>
@@ -323,6 +341,16 @@ function App() {
           <p>
             <a href="mailto:jharpaustin@gmail.com" target="_blank">
               Email Me
+            </a>
+          </p>
+          <p>
+            {" "}
+            <a
+              href="/images/HarperAustin.Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
             </a>
           </p>
         </section>
