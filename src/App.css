@@ -48,7 +48,8 @@
   font-size: 24px;
 }
 
-Active/clicked state .buttons button:active {
+/* Active/clicked state */
+.buttons button:active {
   background-color: #ffffff;
   transform: translateY(0);
 }
