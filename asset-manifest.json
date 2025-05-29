@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/harper_web/static/css/main.3c3cd0bf.css",
+    "main.js": "/harper_web/static/js/main.47e0f4fd.js",
+    "static/js/453.8fa26528.chunk.js": "/harper_web/static/js/453.8fa26528.chunk.js",
+    "index.html": "/harper_web/index.html",
+    "main.3c3cd0bf.css.map": "/harper_web/static/css/main.3c3cd0bf.css.map",
+    "main.47e0f4fd.js.map": "/harper_web/static/js/main.47e0f4fd.js.map",
+    "453.8fa26528.chunk.js.map": "/harper_web/static/js/453.8fa26528.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c3cd0bf.css",
+    "static/js/main.47e0f4fd.js"
+  ]
+}
